@@ -15,7 +15,8 @@ import com.plcoding.downloadmanagerguide.ui.theme.DownloadManagerGuideTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         val downloader = AndroidDownloader(this)
-        downloader.downloadFile("https://www.africau.edu/images/default/sample.pdf")
+        downloader.download2("https://jsoncompare.org/LearningContainer/SampleFiles/Video/MP4/Sample-Video-File-For-Testing.mp4")
+//        downloader.downloadFile("https://www.africau.edu/images/default/sample.pdf")
 //        downloader.downloadFile("https://pl-coding.com/wp-content/uploads/2022/04/pic-squared.jpg")
         super.onCreate(savedInstanceState)
         setContent {

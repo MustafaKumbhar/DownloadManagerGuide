@@ -20,7 +20,7 @@ class AndroidDownloader(
 //            .setMimeType("image/jpeg")
             .setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI)
             .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
-            .setTitle("Title")
+            .setTitle("PDF")
             .addRequestHeader("Authorization", "Bearer <token>")
             .setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "new_pdf.pdf")
 //            .setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "image.jpg")
@@ -29,10 +29,12 @@ class AndroidDownloader(
 
     fun download2(url: String){
         val request = DownloadManager.Request(Uri.parse(url))
-            .setTitle("Title")
-            .setDescription("Description")
+            .setTitle("Video")
+            .setDescription("Video Downloading...")
             .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
             .setAllowedOverMetered(true)
+            .setDestinationInExternalPublicDir(Environment.DIRECTORY_DCIM, "video.mp4")
+
 
         val dm = context.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
         dm.enqueue(request)
